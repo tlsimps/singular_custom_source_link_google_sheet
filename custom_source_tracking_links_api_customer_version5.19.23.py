@@ -6,7 +6,7 @@
 #Groups data by Custom Source, App Name and Tracker Name - if more than 1 platform (iOS + Android) then a single link for both ios and android will be created
 #Else separate links are created for iOS and Android
 #Created links are also written to the Generated Links tab
-#Shows code example of how to get IDs from Helper APIs to build Tracking Link Creation API request -- NOT MEANT FOR USE IN PRODUCTION - this is meant to be used as an example only
+#Shows example of how to get IDs from Helper APIs to build Tracking Link Creation API request -- NOT MEANT FOR USE IN PRODUCTION - this is meant to be used as an example only
 
 import pandas as pd
 from google.oauth2.service_account import Credentials
