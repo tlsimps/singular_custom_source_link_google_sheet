@@ -32,7 +32,7 @@ df = pd.DataFrame(data[1:], columns=columns)
 df_jc = ['App Name', 'Platform', 'Bundle ID']
 df[df_jc] = df[df_jc].apply(lambda x: x.str.lower())
 
-#links api
+#links api endpoints
 api_key = '<your Singular Reporting API Key>'
 create_link_url = "https://api.singular.net/api/v1/singular_links/links"
 domains_url = "https://api.singular.net/api/v1/singular_links/domains"
@@ -44,10 +44,8 @@ app_data = apps_response.json()
 available_apps_df = pd.DataFrame(app_data['available_apps'])
 avail_apps_jc = ['app', 'app_platform', 'app_longname']
 available_apps_df[avail_apps_jc] = available_apps_df[avail_apps_jc].apply(lambda x: x.str.lower())
-#print(available_apps_df[['app', 'app_platform', 'app_longname']])
 
 merged_df = df.merge(available_apps_df, left_on = df_jc, right_on = avail_apps_jc)
-#print(merged_df)
 
 #link subdomain mapping by app-- maybe handle in Google sheet instead?
 app_subdomain = {
